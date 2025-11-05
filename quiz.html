@@ -1,0 +1,156 @@
+<section id="quiz-section">
+  <h2>🎯 Quiz: Teste seus conhecimentos sobre os "porquês"</h2>
+  <p>Responda às perguntas abaixo quantas vezes quiser!</p>
+
+
+  <div id="quiz">
+    <!-- Pergunta 1 -->
+    <div class="pergunta" id="p1">
+      <p>1️⃣ “Não fui à festa ___ estava cansado.”</p>
+      <button data-num="1" data-resposta="porque">porque</button>
+      <button data-num="1" data-resposta="por que">por que</button>
+      <button data-num="1" data-resposta="por quê">por quê</button>
+      <button data-num="1" data-resposta="porquê">porquê</button>
+      <div class="resultado" id="res1"></div>
+    </div>
+
+
+    <!-- Pergunta 2 -->
+    <div class="pergunta" id="p2">
+      <p>2️⃣ “Você não veio ontem ___?”</p>
+      <button data-num="2" data-resposta="porque">porque</button>
+      <button data-num="2" data-resposta="por que">por que</button>
+      <button data-num="2" data-resposta="por quê">por quê</button>
+      <button data-num="2" data-resposta="porquê">porquê</button>
+      <div class="resultado" id="res2"></div>
+    </div>
+
+
+    <!-- Pergunta 3 -->
+    <div class="pergunta" id="p3">
+      <p>3️⃣ “Ainda não sei o ___ dessa confusão.”</p>
+      <button data-num="3" data-resposta="porque">porque</button>
+      <button data-num="3" data-resposta="por que">por que</button>
+      <button data-num="3" data-resposta="por quê">por quê</button>
+      <button data-num="3" data-resposta="porquê">porquê</button>
+      <div class="resultado" id="res3"></div>
+    </div>
+
+
+    <!-- Pergunta 4 -->
+    <div class="pergunta" id="p4">
+      <p>4️⃣ “Gostaria de saber ___ ele saiu mais cedo.”</p>
+      <button data-num="4" data-resposta="porque">porque</button>
+      <button data-num="4" data-resposta="por que">por que</button>
+      <button data-num="4" data-resposta="por quê">por quê</button>
+      <button data-num="4" data-resposta="porquê">porquê</button>
+      <div class="resultado" id="res4"></div>
+    </div>
+
+
+    <!-- Pergunta 5 -->
+    <div class="pergunta" id="p5">
+      <p>5️⃣ “Ela explicou o motivo pelo ___ não compareceu.”</p>
+      <button data-num="5" data-resposta="porque">porque</button>
+      <button data-num="5" data-resposta="por que">por que</button>
+      <button data-num="5" data-resposta="por quê">por quê</button>
+      <button data-num="5" data-resposta="porquê">porquê</button>
+      <div class="resultado" id="res5"></div>
+    </div>
+
+
+    <!-- Pergunta 6 -->
+    <div class="pergunta" id="p6">
+      <p>6️⃣ “Você sabe ___ ele não veio?”</p>
+      <button data-num="6" data-resposta="porque">porque</button>
+      <button data-num="6" data-resposta="por que">por que</button>
+      <button data-num="6" data-resposta="por quê">por quê</button>
+      <button data-num="6" data-resposta="porquê">porquê</button>
+      <div class="resultado" id="res6"></div>
+    </div>
+
+
+    <!-- Pergunta 7 -->
+    <div class="pergunta" id="p7">
+      <p>7️⃣ “O ___ de tudo isso ainda é um mistério.”</p>
+      <button data-num="7" data-resposta="porque">porque</button>
+      <button data-num="7" data-resposta="por que">por que</button>
+      <button data-num="7" data-resposta="por quê">por quê</button>
+      <button data-num="7" data-resposta="porquê">porquê</button>
+      <div class="resultado" id="res7"></div>
+    </div>
+
+
+    <!-- Pergunta 8 -->
+    <div class="pergunta" id="p8">
+      <p>8️⃣ “Ele ficou em casa ___ estava se sentindo mal.”</p>
+      <button data-num="8" data-resposta="porque">porque</button>
+      <button data-num="8" data-resposta="por que">por que</button>
+      <button data-num="8" data-resposta="por quê">por quê</button>
+      <button data-num="8" data-resposta="porquê">porquê</button>
+      <div class="resultado" id="res8"></div>
+    </div>
+
+
+    <!-- Pergunta 9 -->
+    <div class="pergunta" id="p9">
+      <p>9️⃣ “Não entendo ___ ele está bravo comigo.”</p>
+      <button data-num="9" data-resposta="porque">porque</button>
+      <button data-num="9" data-resposta="por que">por que</button>
+      <button data-num="9" data-resposta="por quê">por quê</button>
+      <button data-num="9" data-resposta="porquê">porquê</button>
+      <div class="resultado" id="res9"></div>
+    </div>
+
+
+    <!-- Pergunta 10 -->
+    <div class="pergunta" id="p10">
+      <p>🔟 “Expliquei o ___ de minha decisão.”</p>
+      <button data-num="10" data-resposta="porque">porque</button>
+      <button data-num="10" data-resposta="por que">por que</button>
+      <button data-num="10" data-resposta="por quê">por quê</button>
+      <button data-num="10" data-resposta="porquê">porquê</button>
+      <div class="resultado" id="res10"></div>
+    </div>
+
+
+    <div id="final"></div>
+  </div>
+
+
+  <script>
+    const respostasCorretas = {
+      1: "porque",
+      2: "por quê",
+      3: "porquê",
+      4: "por que",
+      5: "porquê",
+      6: "por que",
+      7: "porquê",
+      8: "porque",
+      9: "por que",
+      10: "porquê"
+    };
+
+
+    const botoes = document.querySelectorAll("#quiz button");
+    botoes.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const num = btn.getAttribute("data-num");
+        const resposta = btn.getAttribute("data-resposta");
+        const resultadoDiv = document.getElementById("res" + num);
+
+
+        if (resposta === respostasCorretas[num]) {
+          resultadoDiv.textContent = "✅ Correto! Parabéns!";
+          resultadoDiv.style.color = "green";
+        } else {
+          resultadoDiv.textContent = "❌ Errado! Tente lembrar da regra.";
+          resultadoDiv.style.color = "red";
+        }
+      });
+    });
+  </script>
+</section>
+
+

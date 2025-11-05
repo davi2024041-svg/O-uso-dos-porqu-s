@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — Os Porquês da Língua Portuguesa</title>
+
+
+
+
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+  }
+
+
+
+
+  header {
+    text-align: center;
+    padding: 2rem;
+  }
+
+
+
+
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+
+  h2 {
+    color: #333;
+  }
+
+
+
+
+  button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+
+
+
+  button:hover {
+    background-color: #357abd;
+  }
+
+
+
+
+  #resultadoFinal {
+    margin-top: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+
+
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+
+
+
+  input[type="radio"] {
+    margin-right: 8px;
+  }
+</style>
+</head>
+
+
+
+
+<body>
+  <header>
+    <h1>Quiz — O Uso dos Porquês</h1>
+    <p>Escolha a alternativa correta em cada questão:</p>
+  </header>
+
+
+
+
+  <main>
+    <!-- PERGUNTA 1 -->
+    <h2>1️⃣ Qual frase usa corretamente o “porque”?</h2>
+    <form id="q1">
+      <label><input type="radio" name="q1" value="a"> Por que você não veio ontem?</label>
+      <label><input type="radio" name="q1" value="b"> Porque eu estava cansado.</label>
+      <label><input type="radio" name="q1" value="c"> Porquê você faltou ontem?</label>
+    </form>
+
+
+
+
+    <!-- PERGUNTA 2 -->
+    <h2>2️⃣ Em qual alternativa o “por quê” está usado corretamente?</h2>
+    <form id="q2">
+      <label><input type="radio" name="q2" value="a"> Você não veio por quê?</label>
+      <label><input type="radio" name="q2" value="b"> Por quê você não veio?</label>
+      <label><input type="radio" name="q2" value="c"> Por que você não veio?</label>
+    </form>
+
+
+
+
+    <!-- PERGUNTA 3 -->
+    <h2>3️⃣ Qual frase usa “por que” de forma correta?</h2>
+    <form id="q3">
+      <label><input type="radio" name="q3" value="a"> Por que você está triste?</label>
+      <label><input type="radio" name="q3" value="b"> Porque você está triste?</label>
+      <label><input type="radio" name="q3" value="c"> Porquê você está triste?</label>
+    </form>
+
+
+
+
+    <!-- PERGUNTA 4 -->
+    <h2>4️⃣ Onde o uso de “porquê” está correto?</h2>
+    <form id="q4">
+      <label><input type="radio" name="q4" value="a"> Eu não sei o porquê.</label>
+      <label><input type="radio" name="q4" value="b"> Eu não sei o porque.</label>
+      <label><input type="radio" name="q4" value="c"> Eu não sei o por que.</label>
+    </form>
+
+
+
+
+     <h2>5️⃣ Em qual opção “por que” é usado corretamente?</h2>
+    <form id="q5">
+      <label><input type="radio" name="q5" value="a"> Gostaria de saber por que ela saiu mais cedo.</label>
+      <label><input type="radio" name="q5" value="b"> Gostaria de saber porque ela saiu mais cedo.</label>
+      <label><input type="radio" name="q5" value="c"> Gostaria de saber porquê ela saiu mais cedo.</label>
+    </form>
+
+
+
+
+    <h2>6️⃣ Qual alternativa usa corretamente o “porque”?</h2>
+    <form id="q6">
+      <label><input type="radio" name="q6" value="a"> Não fui ao cinema por que estava cansado.</label>
+      <label><input type="radio" name="q6" value="b"> Não fui ao cinema porque estava cansado.</label>
+      <label><input type="radio" name="q6" value="c"> Não fui ao cinema porquê estava cansado.</label>
+    </form>
+
+
+
+
+<h2>7️⃣ Onde o uso de “por quê” está correto?</h2>
+    <form id="q7">
+      <label><input type="radio" name="q7" value="a"> Ele chorou, mas ninguém sabe por quê.</label>
+      <label><input type="radio" name="q7" value="b"> Ele chorou, mas ninguém sabe por que.</label>
+      <label><input type="radio" name="q7" value="c"> Ele chorou, mas ninguém sabe porque.</label>
+    </form>
+
+
+
+
+     <h2>8️⃣ Escolha a frase correta:</h2>
+    <form id="q8">
+      <label><input type="radio" name="q8" value="a"> O porquê de tanta raiva ninguém entende.</label>
+      <label><input type="radio" name="q8" value="b"> O porque de tanta raiva ninguém entende.</label>
+      <label><input type="radio" name="q8" value="c"> O por que de tanta raiva ninguém entende.</label>
+    </form>
+
+
+
+
+    <h2>9️⃣ Qual frase está incorreta?</h2>
+    <form id="q9">
+      <label><input type="radio" name="q9" value="a"> Não sei o porquê de ele estar nervoso.</label>
+      <label><input type="radio" name="q9" value="b"> Por que você chegou tão tarde?</label>
+      <label><input type="radio" name="q9" value="c"> Eu fui embora por quê estava com sono.</label>
+    </form>
+
+
+
+
+    <h2>🔟 Qual frase usa “porque” corretamente?</h2>
+    <form id="q10">
+      <label><input type="radio" name="q10" value="a"> Estudei bastante porque quero passar.</label>
+      <label><input type="radio" name="q10" value="b"> Estudei bastante por que quero passar.</label>
+      <label><input type="radio" name="q10" value="c"> Estudei bastante porquê quero passar.</label>
+    </form>
+
+
+
+
+    <button type="button" onclick="verificarQuiz()">Verificar respostas</button>
+    <p id="resultadoFinal"></p>
+  </main>
+
+
+
+
+  <script>
+    function verificarQuiz() {
+      let acertos = 0;
+
+
+
+
+      // Gabarito
+      const respostas = {
+        q1: "b",
+        q2: "a",
+        q3: "a",
+        q4: "a",
+        q5: "a",
+        q6: "b",
+        q7: "a",
+        q8: "a",
+        q9: "c",
+        q10: "a"
+      };
+
+
+
+
+      // Verifica todas as perguntas
+      for (let i = 1; i <= 10; i++) {
+        const selecionada = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selecionada && selecionada.value === respostas[`q${i}`]) {
+          acertos++;
+        }
+      }
+
+
+
+
+      // Exibe o resultado final
+      const resultado = document.getElementById("resultadoFinal");
+      if (acertos === 10) {
+        resultado.textContent = `🎉 Incrível! Você acertou todas (${acertos}/10)!`;
+      } else if (acertos >= 7) {
+        resultado.textContent = `👏 Muito bom! Você acertou ${acertos} de 10.`;
+      } else if (acertos >= 4) {
+        resultado.textContent = `😊 Você acertou ${acertos} de 10. Continue praticando!`;
+      } else {
+        resultado.textContent = `😕 Você acertou apenas ${acertos} de 10. Que tal revisar os porquês?`;
+      }
+    }
+  </script>
+</body>
+</html>
