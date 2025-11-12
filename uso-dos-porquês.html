@@ -1,217 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perguntas — O Uso dos Porquês (Estilo Botões)</title>
-    <style>
-        /* Importação e Fontes */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perguntas — O Uso dos Porquês (Estilo Botões)</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body, button, p, h2 {
+        font-family: 'Poppins', sans-serif;
+    }
+    body {
+        background-color: #f9fbfc;
+        margin: 0;
+        padding: 0;
+        color: #2c3e50;
+    }
+    #quiz-section {
+        padding: 20px;
+        max-width: 750px;
+        margin: 2rem auto;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    header { text-align: center; padding: 1rem 0; }
+    h1 { color: #000000; }
+    h2 { color: #2c3e50; text-align: left; margin-bottom: 10px; font-size: 1.4rem; }
+    p { color: #555; text-align: center; margin-bottom: 20px; }
 
+    .pergunta {
+        margin-bottom: 20px;
+        background-color: #e8f3f3;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        border-left: 6px solid #1c3095;
+    }
+    .pergunta > p {
+        text-align: left;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #000000;
+    }
+    .opcoes-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    button.opcao {
+        margin: 0;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background-color: #ffffff;
+        border: 1px solid #053f79;
+        color: #003366;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+    button.opcao:hover,
+    button.opcao.selecionada {
+        background-color: #1b2e6b;
+        color: #fff;
+        border-color: #143d72;
+    }
 
+    /* NOVOS: cores de feedback */
+    button.correta {
+        background-color: #28a745 !important;
+        color: #fff !important;
+        border-color: #28a745 !important;
+    }
+    button.errada {
+        background-color: #dc3545 !important;
+        color: #fff !important;
+        border-color: #dc3545 !important;
+    }
 
-
-        body, button, p, h2 {
-            font-family: 'Poppins', sans-serif;
-        }
-
-
-
-
-        /* Estilo do Corpo e Fundo */
-        body {
-            /* NOVO: Fundo em azul muito claro, quase branco */
-            background-color: #f9fbfc;
-            margin: 0;
-            padding: 0;
-            color: #2c3e50; /* Cor do texto principal */
-        }
-
-
-
-
-        /* Estilo da Seção Principal */
-        #quiz-section {
-            padding: 20px;
-            max-width: 750px;
-            margin: 2rem auto;
-            background: #ffffff; /* Fundo branco */
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-
-
-
-        /* Cabeçalho */
-        header {
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-
-
-
-        h1 {
-            color: #000000;
-        }
-
-
-
-
-        h2 {
-            color: #2c3e50;
-            text-align: left;
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-        }
-
-
-
-
-        p {
-            color: #555;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-
-
-
-        /* Estilo da Pergunta */
-        .pergunta {
-            margin-bottom: 20px;
-            /* Fundo muito claro em tom Teal */
-            background-color: #e8f3f3;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            /* Borda em Teal vibrante */
-            border-left: 6px solid #1c3095;
-        }
-       
-        .pergunta > p {
-            text-align: left;
-            font-weight: 600;
-            margin-bottom: 10px;
-            /* Cor do número/texto da pergunta */
-            color: #000000;
-        }
-
-
-
-
-        .opcoes-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-
-
-
-        /* Estilo dos Botões de Opção */
-        button.opcao {
-            margin: 0;
-            padding: 8px 14px;
-            border: none;
-            border-radius: 6px;
-            background-color: #ffffff;
-            /* Borda e Texto em Azul Marinho Escuro */
-            border: 1px solid #053f79;
-            color: #003366;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-
-
-
-        /* Estilo dos Botões (Hover/Selecionado) */
-        button.opcao:hover,
-        button.opcao.selecionada {
-            /* Fundo em Teal */
-            background-color: #1b2e6b;
-            color: #fff;
-            border-color: #143d72;
-        }
-
-
-
-
-        /* Botão Final de Verificação */
-        #verificar-btn {
-            display: block;
-            width: 100%;
-            margin-top: 25px;
-            padding: 10px;
-            /* Azul Vibrante */
-            background-color: #03426c;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-
-
-
-
-        #verificar-btn:hover {
-            background-color: #2980b9;
-        }
-
-
-
-
-        /* Estilo do Resultado Final */
-        #resultadoFinal {
-            margin-top: 20px;
-            font-weight: bold;
-            text-align: center;
-            font-size: 1.2rem;
-            padding: 10px;
-            border-radius: 6px;
-        }
-       
-        /* Cores de Feedback (Mantidas) */
-        /* Sucesso: Verde Suave */
-        #resultadoFinal[style*="#d4edda"] {
-            background-color: #d4edda;
-            color: #5cfe0b;
-        }
-        /* Bom: Amarelo/Laranja Suave */
-        #resultadoFinal[style*="#fff3cd"] {
-            background-color: #fff3cd;
-            color: #9cb801;
-        }
-        /* OK/Praticar: Azul Suave */
-        #resultadoFinal[style*="#cce5ff"] {
-            background-color: #cce5ff;
-            color: #004085;
-        }
-        /* Erro: Vermelho Suave */
-        #resultadoFinal[style*="#f8d7da"] {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-    </style>
+    #verificar-btn {
+        display: block;
+        width: 100%;
+        margin-top: 25px;
+        padding: 10px;
+        background-color: #03426c;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease;
+    }
+    #verificar-btn:hover {
+        background-color: #2980b9;
+    }
+    #resultadoFinal {
+        margin-top: 20px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 10px;
+        border-radius: 6px;
+    }
+</style>
 </head>
 <body>
-
-
-
 
 <section id="quiz-section">
     <header>
         <h1>Perguntas — O Uso dos Porquês</h1>
         <p>Escolha a alternativa correta em cada questão:</p>
     </header>
-
-
-
 
     <div id="quiz">
         <div class="pergunta" id="p1">
@@ -222,10 +121,6 @@
                 <button class="opcao" data-value="c">Porquê você faltou ontem?</button>
             </div>
         </div>
-
-
-
-
         <div class="pergunta" id="p2">
             <p>2️⃣ Em qual alternativa o “por quê” está usado corretamente?</p>
             <div class="opcoes-container" data-q="q2">
@@ -234,10 +129,6 @@
                 <button class="opcao" data-value="c">Por que você não veio?</button>
             </div>
         </div>
-
-
-
-
         <div class="pergunta" id="p3">
             <p>3️⃣ Qual frase usa “por que” de forma correta?</p>
             <div class="opcoes-container" data-q="q3">
@@ -246,10 +137,6 @@
                 <button class="opcao" data-value="c">Porquê você está triste?</button>
             </div>
         </div>
-
-
-
-
         <div class="pergunta" id="p4">
             <p>4️⃣ Onde o uso de “porquê” está correto?</p>
             <div class="opcoes-container" data-q="q4">
@@ -258,10 +145,6 @@
                 <button class="opcao" data-value="c">Eu não sei o por que.</button>
             </div>
         </div>
-
-
-
-
         <div class="pergunta" id="p5">
             <p>5️⃣ Em qual opção “por que” é usado corretamente?</p>
             <div class="opcoes-container" data-q="q5">
@@ -270,10 +153,6 @@
                 <button class="opcao" data-value="c">Gostaria de saber porquê ela saiu mais cedo.</button>
             </div>
         </div>
-
-
-
-
         <div class="pergunta" id="p6">
             <p>6️⃣ Qual alternativa usa corretamente o “porque”?</p>
             <div class="opcoes-container" data-q="q6">
@@ -282,10 +161,6 @@
                 <button class="opcao" data-value="c">Não fui ao cinema porquê estava cansado.</button>
             </div>
         </div>
-
-
-
-
         <div class="pergunta" id="p7">
             <p>7️⃣ Onde o uso de “por quê” está correto?</p>
             <div class="opcoes-container" data-q="q7">
@@ -294,10 +169,6 @@
                 <button class="opcao" data-value="c">Ele chorou, mas ninguém sabe porque.</button>
             </div>
         </div>
-
-
-
-
         <div class="pergunta" id="p8">
             <p>8️⃣ Escolha a frase correta:</p>
             <div class="opcoes-container" data-q="q8">
@@ -306,10 +177,6 @@
                 <button class="opcao" data-value="c">O por que de tanta raiva ninguém entende.</button>
             </div>
         </div>
-
-
-
-
         <div class="pergunta" id="p9">
             <p>9️⃣ Qual frase está incorreta?</p>
             <div class="opcoes-container" data-q="q9">
@@ -318,10 +185,6 @@
                 <button class="opcao" data-value="c">Eu fui embora por quê estava com sono.</button>
             </div>
         </div>
-
-
-
-
         <div class="pergunta" id="p10">
             <p>🔟 Qual frase usa “porque” corretamente?</p>
             <div class="opcoes-container" data-q="q10">
@@ -332,110 +195,76 @@
         </div>
     </div>
 
-
-
-
     <button id="verificar-btn" type="button">Verificar respostas</button>
     <p id="resultadoFinal"></p>
 </section>
 
-
-
-
 <script>
-    const respostasCorretas = {
-        q1: "b",
-        q2: "a",
-        q3: "a",
-        q4: "a",
-        q5: "a",
-        q6: "b",
-        q7: "a",
-        q8: "a",
-        q9: "c",
-        q10: "a"
-    };
+const respostasCorretas = {
+    q1: "b", q2: "a", q3: "a", q4: "a", q5: "a",
+    q6: "b", q7: "a", q8: "a", q9: "c", q10: "a"
+};
 
+const botoesOpcao = document.querySelectorAll(".opcoes-container .opcao");
+const verificarBtn = document.getElementById("verificar-btn");
+const resultadoFinal = document.getElementById("resultadoFinal");
+const respostasUsuario = {};
 
+// Seleção da resposta
+botoesOpcao.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const container = btn.closest(".opcoes-container");
+        const q = container.getAttribute("data-q");
+        const value = btn.getAttribute("data-value");
 
+        // Remove seleção anterior
+        container.querySelectorAll('.opcao').forEach(b => b.classList.remove('selecionada'));
+        btn.classList.add('selecionada');
 
-    const botoesOpcao = document.querySelectorAll(".opcoes-container .opcao");
-    const verificarBtn = document.getElementById("verificar-btn");
-    const resultadoFinal = document.getElementById("resultadoFinal");
-    const respostasUsuario = {};
-
-
-
-
-    // Adiciona o evento de clique aos botões de opção
-    botoesOpcao.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const container = btn.closest(".opcoes-container");
-            const q = container.getAttribute("data-q");
-            const value = btn.getAttribute("data-value");
-
-
-
-
-            // Remove a classe 'selecionada' de todos os botões no mesmo container
-            container.querySelectorAll('.opcao').forEach(otherBtn => {
-                otherBtn.classList.remove('selecionada');
-            });
-
-
-
-
-            // Adiciona a classe 'selecionada' ao botão clicado
-            btn.classList.add('selecionada');
-           
-            // Armazena a resposta do usuário
-            respostasUsuario[q] = value;
-        });
+        respostasUsuario[q] = value;
     });
+});
 
+// Verificar respostas
+verificarBtn.addEventListener("click", () => {
+    let acertos = 0;
+    const total = Object.keys(respostasCorretas).length;
 
+    // Limpa cores anteriores
+    botoesOpcao.forEach(btn => btn.classList.remove('correta', 'errada'));
 
-
-    // Adiciona o evento de clique ao botão de verificação
-    verificarBtn.addEventListener("click", () => {
-        let acertos = 0;
-        let totalPerguntas = Object.keys(respostasCorretas).length;
-
-
-
-
-        for (const q in respostasCorretas) {
-            const respostaUsuario = respostasUsuario[q];
-            if (respostaUsuario && respostaUsuario === respostasCorretas[q]) {
-                acertos++;
+    for (const q in respostasCorretas) {
+        const respostaCerta = respostasCorretas[q];
+        const botoes = document.querySelectorAll(`[data-q="${q}"] .opcao`);
+        botoes.forEach(btn => {
+            const valor = btn.getAttribute("data-value");
+            if (valor === respostaCerta) {
+                btn.classList.add('correta');
+            } else if (respostasUsuario[q] === valor) {
+                btn.classList.add('errada');
             }
-        }
+        });
+        if (respostasUsuario[q] === respostaCerta) acertos++;
+    }
 
-
-
-
-        // Exibe o resultado final
-        if (acertos === totalPerguntas) {
-            resultadoFinal.textContent = `🎉 Incrível! Você acertou todas (${acertos}/${totalPerguntas})!`;
-            resultadoFinal.style.backgroundColor = '#d4edda';
-            resultadoFinal.style.color = '#155724';
-        } else if (acertos >= Math.ceil(totalPerguntas * 0.7)) {
-            resultadoFinal.textContent = `👏 Muito bom! Você acertou ${acertos} de ${totalPerguntas}.`;
-            resultadoFinal.style.backgroundColor = '#fff3cd';
-            resultadoFinal.style.color = '#856404';
-        } else if (acertos >= Math.ceil(totalPerguntas * 0.4)) {
-            resultadoFinal.textContent = `😊 Você acertou ${acertos} de ${totalPerguntas}. Continue praticando!`;
-            resultadoFinal.style.backgroundColor = '#cce5ff';
-            resultadoFinal.style.color = '#004085';
-        } else {
-            resultadoFinal.textContent = `😕 Você acertou apenas ${acertos} de ${totalPerguntas}. Que tal revisar os porquês?`;
-            resultadoFinal.style.backgroundColor = '#f8d7da';
-            resultadoFinal.style.color = '#721c24';
-        }
-    });
+    if (acertos === total) {
+        resultadoFinal.textContent = `🎉 Incrível! Você acertou todas (${acertos}/${total})!`;
+        resultadoFinal.style.backgroundColor = '#d4edda';
+        resultadoFinal.style.color = '#155724';
+    } else if (acertos >= Math.ceil(total * 0.7)) {
+        resultadoFinal.textContent = `👏 Muito bom! Você acertou ${acertos} de ${total}.`;
+        resultadoFinal.style.backgroundColor = '#fff3cd';
+        resultadoFinal.style.color = '#856404';
+    } else if (acertos >= Math.ceil(total * 0.4)) {
+        resultadoFinal.textContent = `😊 Você acertou ${acertos} de ${total}. Continue praticando!`;
+        resultadoFinal.style.backgroundColor = '#cce5ff';
+        resultadoFinal.style.color = '#004085';
+    } else {
+        resultadoFinal.textContent = `😕 Você acertou apenas ${acertos} de ${total}. Que tal revisar os porquês?`;
+        resultadoFinal.style.backgroundColor = '#f8d7da';
+        resultadoFinal.style.color = '#721c24';
+    }
+});
 </script>
 </body>
 </html>
-
-
-
