@@ -3,27 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Os Porquês da Língua Portuguesa</title>
+<title>O uso dos porquês</title>
+
+
+
+
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+
+
+  body, button, p, h1, h2, a {
+    font-family: 'Poppins', sans-serif;
+  }
+
+
+
+
   body {
-    font-family: "Poppins", sans-serif;
-    color: #2b2b2b;
+    background-color: #f9fafe;
+    color: #333;
     margin: 0;
     padding: 0;
-    background: #f8f6f3;
   }
+
+
 
 
   header {
     text-align: center;
     padding: 2rem;
-    background-color: #f1edea;
+    background-color: #e7f1ff;
+    border-bottom: 4px solid #007bff;
   }
+
+
 
 
   h1 {
-    color: #3e3a36;
+    color: #0056b3;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
+
+
+
+
+  header p {
+    color: #333;
+  }
+
+
 
 
   main {
@@ -31,10 +62,13 @@
     margin: 2rem auto;
     background: #ffffff;
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid #007bff;
     transition: transform 0.2s ease;
   }
+
+
 
 
   main:hover {
@@ -42,73 +76,60 @@
   }
 
 
+
+
+  h2 {
+    color: #0056b3;
+    margin-bottom: 0.5rem;
+  }
+
+
+
+
   button {
-    background-color: #5a4636;
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
+    margin-top: 0.8rem;
+    background-color: #ffffff;
+    border: 1px solid #0056b3;
+    color: #0056b3;
+    padding: 8px 14px;
     border-radius: 6px;
     cursor: pointer;
-    font-family: inherit;
-    transition: background 0.3s;
+    transition: 0.3s;
+    font-weight: 500;
   }
+
+
 
 
   button:hover {
-    background-color: #7a5c47;
+    background-color: #0056b3;
+    color: white;
   }
+
+
 
 
   .exemplo {
     display: none;
     margin-top: 1rem;
-    background: #f6f2ef;
+    background: #e7f1ff;
     padding: 1rem;
-    border-left: 4px solid #5a4636;
-  }
-
-
-  /* Seção do quiz */
-  #quiz-section {
-    max-width: 800px;
-    margin: 3rem auto;
-    background: #eae6e1;
-    padding: 2rem;
+    border-left: 5px solid #007bff;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
 
-  #quiz {
-    margin-top: 1.5rem;
-  }
-
-
-  .pergunta {
-    margin-bottom: 2rem;
-  }
-
-
-  .resultado {
-    margin-top: 1rem;
-    font-weight: bold;
-    text-align: center;
-  }
-
-
-  #final {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    font-weight: bold;
-  }
 
 
   a {
-    color: #5a4636;
-    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.6rem;
+    color: #0056b3;
     font-weight: bold;
+    text-decoration: none;
   }
+
+
 
 
   a:hover {
@@ -116,11 +137,17 @@
   }
 </style>
 </head>
+
+
+
+
 <body>
   <header>
     <h1>O uso dos porquês</h1>
-    <p>Entenda o uso correto dos porquês.</p>
+    <p>Entenda o uso correto dos “porquês”.</p>
   </header>
+
+
 
 
   <main>
@@ -135,9 +162,11 @@
   </main>
 
 
+
+
   <main>
     <h2>Porque</h2>
-    <p>Serve para explicações, ou respostas.</p>
+    <p>Serve para explicações ou respostas.</p>
     <p><strong>Ex:</strong> Eu não fui à festa porque não estava bem.</p>
     <button onclick="mostrarExemplo('ex2')">Ver mais exemplos</button>
     <div id="ex2" class="exemplo">
@@ -145,6 +174,8 @@
          ✔ Ela saiu cedo porque precisava estudar.</p>
     </div>
   </main>
+
+
 
 
   <main>
@@ -159,6 +190,8 @@
   </main>
 
 
+
+
   <main>
     <h2>Porquê</h2>
     <p>É um substantivo, vem com artigo e significa “o motivo” ou “a razão”.</p>
@@ -171,23 +204,23 @@
   </main>
 
 
+
+
   <main>
     <p>Clique aqui para fazer mais exercícios:</p>
     <a href="uso-dos-porquês.html">Fazer exercícios</a>
-    <p>clique aqui para responder a um quiz:</p>
+    <p>Ou clique aqui para responder ao quiz:</p>
     <a href="quiz.html">Responder ao quiz</a>
   </main>
 
 
-  <!-- SCRIPT PARA MOSTRAR OS EXEMPLOS -->
+
+
   <script>
     function mostrarExemplo(id) {
       const exemplo = document.getElementById(id);
-      if (exemplo.style.display === "none" || exemplo.style.display === "") {
-        exemplo.style.display = "block";
-      } else {
-        exemplo.style.display = "none";
-      }
+      exemplo.style.display =
+        exemplo.style.display === "block" ? "none" : "block";
     }
   </script>
 </body>
