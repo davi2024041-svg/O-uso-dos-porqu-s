@@ -161,8 +161,12 @@
         const resposta = btn.getAttribute("data-resposta");
         const resultadoDiv = document.getElementById("res" + num);
 
+        // Remove a seleção anterior dos botões da mesma pergunta
+        const botoesDaPergunta = document.querySelectorAll(`button[data-num="${num}"]`);
+        botoesDaPergunta.forEach(b => b.classList.remove("selecionado"));
 
-
+        // Marca o botão clicado
+        btn.classList.add("selecionado");
 
         if (resposta === respostasCorretas[num]) {
           resultadoDiv.textContent = "✅ Correto! Parabéns!";
@@ -237,6 +241,12 @@
     color: #fff;
   }
 
+  /* 🔹 Botão selecionado mantém a cor após o clique */
+  button.selecionado {
+    background-color: #0056b3 !important;
+    color: #fff !important;
+  }
+
 
 
 
@@ -257,5 +267,3 @@
     border-left: 6px solid #007bff;
   }
 </style>
-
-
